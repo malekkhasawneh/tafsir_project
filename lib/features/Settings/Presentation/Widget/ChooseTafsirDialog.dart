@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 
-class ChooseTafsir extends StatelessWidget {
+class ChooseTafsir extends StatefulWidget {
+  @override
+  _ChooseTafsirState createState() => _ChooseTafsirState();
+}
+
+class _ChooseTafsirState extends State<ChooseTafsir> {
+  List tafsirName = [
+    'أيسر التفاسير/أبو بكر الجزائري',
+    'البحر المحيط/ابو حيان',
+    'التفسير/ابن عرفه'
+  ];
+  String chooseTafsir = 'Choose Tafsir';
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -16,7 +28,8 @@ class ChooseTafsir extends StatelessWidget {
                 width: double.infinity,
                 height: 45,
                 color: Colors.blueAccent.withAlpha(90),
-                child: Row(mainAxisAlignment: MainAxisAlignment.end,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
                       'اختيار التفسير',
@@ -27,22 +40,40 @@ class ChooseTafsir extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.only(right: 50),
-                      child: IconButton(onPressed: () {
-                        Navigator.pop(context);
-                      }, icon: Icon(Icons.arrow_forward_ios_outlined)),
+                      child: IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(Icons.arrow_forward_ios_outlined)),
                     )
                   ],
                 ),
               ),
-              Container(height: 350,
-                child: ListView(children: [
-                  ListTile(title: Text('أيسر التفاسير/أبو بكر الجزائري'),),
-                  Divider(color: Colors.black,height: 1.0,),
-                  ListTile(title: Text('البحر المحيط/ابو حيان'),),
-                  Divider(color: Colors.black,height: 1.0,),
-                  ListTile(title: Text('التفسير/ابن عرفه'),),
-                  Divider(color: Colors.black,height: 1.0,),
-                ],),
+              Container(
+                height: 350,
+                child: ListView(
+                  children: tafsirName.map((tafsir) {
+                    return Column(
+                      children: [
+                        ListTile(
+                          title: Text(tafsir),
+                          trailing: chooseTafsir == tafsir
+                              ? Image.asset('images/check_icon_enable.png')
+                              : null,
+                          onTap: () {
+                            setState(() {
+                              chooseTafsir = tafsir;
+                            });
+                          },
+                        ),
+                        Divider(
+                          color: Colors.black,
+                          height: 1.0,
+                        ),
+                      ],
+                    );
+                  }).toList(),
+                ),
               )
             ],
           ),

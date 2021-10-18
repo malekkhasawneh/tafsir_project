@@ -6,7 +6,12 @@ class ReadersChoice extends StatefulWidget {
 }
 
 class _ReadersChoiceState extends State<ReadersChoice> {
-  String reader = 'Choose Reader';
+  String chooseReader = 'Choose Reader';
+  List readerNames = [
+    'ياسر الدوسري',
+    'ماهر المعيقلي',
+    'محمد صديق المنشاوي',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,53 +52,27 @@ class _ReadersChoiceState extends State<ReadersChoice> {
               Container(
                 height: 350,
                 child: ListView(
-                  children: [
-                    ListTile(
-                      title: Text('ياسر الدوسري'),
-                      trailing: reader == 'ياسر الدوسري'
-                          ? Image.asset('images/check_icon_enable.png')
-                          : null,
-                      onTap: () {
-                        setState(() {
-                          reader = 'ياسر الدوسري';
-                        });
-                      },
-                    ),
-                    Divider(
-                      color: Colors.black,
-                      height: 1.0,
-                    ),
-                    ListTile(
-                      title: Text('ماهر المعيقلي'),
-                      trailing: reader == 'ماهر المعيقلي'
-                          ? Image.asset('images/check_icon_enable.png')
-                          : null,
-                      onTap: () {
-                        setState(() {
-                          reader = 'ماهر المعيقلي';
-                        });
-                      },
-                    ),
-                    Divider(
-                      color: Colors.black,
-                      height: 1.0,
-                    ),
-                    ListTile(
-                      title: Text('محمد صديق المنشاوي'),
-                      trailing: reader == 'محمد صديق المنشاوي'
-                          ? Image.asset('images/check_icon_enable.png')
-                          : null,
-                      onTap: () {
-                        setState(() {
-                          reader = 'محمد صديق المنشاوي';
-                        });
-                      },
-                    ),
-                    Divider(
-                      color: Colors.black,
-                      height: 1.0,
-                    ),
-                  ],
+                  children: readerNames.map((readers) {
+                    return Column(
+                      children: [
+                        ListTile(
+                          title: Text(readers),
+                          trailing: chooseReader == readers
+                              ? Image.asset('images/check_icon_enable.png')
+                              : null,
+                          onTap: () {
+                            setState(() {
+                              chooseReader = readers;
+                            });
+                          },
+                        ),
+                        Divider(
+                          color: Colors.black,
+                          height: 1.0,
+                        ),
+                      ],
+                    );
+                  }).toList(),
                 ),
               )
             ],
