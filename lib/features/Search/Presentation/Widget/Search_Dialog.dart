@@ -11,6 +11,8 @@ class SearchDialog extends StatefulWidget {
 
 class _SearchDialogState extends State<SearchDialog> {
   bool isPressed = false;
+  String selectedButton = 'Select Button';
+  List buttonNames = ['مفردات القران', 'الجذر', 'من خلال الجذر', 'ايات القران'];
 
   @override
   Widget build(BuildContext context) {
@@ -37,40 +39,23 @@ class _SearchDialogState extends State<SearchDialog> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    CustomTextButton(
-                      buttonText: 'مفردات القران',
-                      onTap: () {
-                        setState(() {
-                          isPressed = false;
-                        });
-                      },
-                    ),
-                    CustomTextButton(
-                      buttonText: 'الجذر',
-                      onTap: () {
-                        setState(() {
-                          isPressed = false;
-                        });
-                      },
-                    ),
-                    CustomTextButton(
-                      buttonText: 'من خلال الجذر',
-                      onTap: () {
-                        setState(() {
-                          isPressed = false;
-                        });
-                      },
-                    ),
-                    CustomTextButton(
-                      buttonText: 'ايات القران',
-                      onTap: () {
-                        setState(() {
-                          isPressed = true;
-                        });
-                      },
-                    ),
-                  ],
+                  children: buttonNames
+                      .map(
+                        (button) => CustomTextButton(
+                          buttonText: button,
+                          buttonColor:
+                              selectedButton == button ? Colors.red : null,
+                          onTap: () {
+                            setState(() {
+                              selectedButton = button;
+                              button == 'ايات القران'
+                                  ? isPressed = true
+                                  : isPressed = false;
+                            });
+                          },
+                        ),
+                      )
+                      .toList(),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 2),
