@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       },
       debugShowCheckedModeBanner: false,
       title: 'Great Tafsir',
-      home: HomePage(),
+      home: SplachScreen(),
     );
   }
 }

@@ -10,7 +10,13 @@ import 'package:tafsir_project/features/Settings/Presentation/Widget/TarajemSett
 import 'Download_Swar.dart';
 import 'ReadersChoise.dart';
 
-class SettingsDialog extends StatelessWidget {
+class SettingsDialog extends StatefulWidget {
+  @override
+  _SettingsDialogState createState() => _SettingsDialogState();
+}
+
+class _SettingsDialogState extends State<SettingsDialog> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -124,7 +130,11 @@ class SettingsDialog extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Checkbox(value: false, onChanged: (value) {}),
+                        Checkbox(value: isChecked, onChanged: (value) {
+                          setState(() {
+                            isChecked = value!;
+                          });
+                        }),
                         Text(
                           'تفعيل الاشعارات',
                           style: TextStyle(fontWeight: FontWeight.bold),

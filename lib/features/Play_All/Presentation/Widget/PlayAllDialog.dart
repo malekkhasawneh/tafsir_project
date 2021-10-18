@@ -6,9 +6,11 @@ class PlayAllDialog extends StatefulWidget {
 }
 
 class _PlayAllDialogState extends State<PlayAllDialog> {
+  int? _radioValue;
+  bool isFirstChecked = false;
+  bool isSecondChecked = false;
   @override
   Widget build(BuildContext context) {
-    int? _radioValue;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Dialog(
@@ -35,7 +37,7 @@ class _PlayAllDialogState extends State<PlayAllDialog> {
                     children: [
                       ListTile(
                           title: Text(
-                            'يونس',
+                            'الانفال',
                             style: TextStyle(fontSize: 20),
                           ),
                           trailing: Radio(
@@ -110,7 +112,11 @@ class _PlayAllDialogState extends State<PlayAllDialog> {
                 ),
                 Row(
                   children: [
-                    Checkbox(value: false, onChanged: (value) {}),
+                    Checkbox(value: isFirstChecked, onChanged: (value) {
+                      setState(() {
+                        isFirstChecked = value!;
+                      });
+                    }),
                     Text(
                       'تكرار الاستماع',
                       style:
@@ -120,7 +126,11 @@ class _PlayAllDialogState extends State<PlayAllDialog> {
                 ),
                 Row(
                   children: [
-                    Checkbox(value: false, onChanged: (value) {}),
+                    Checkbox(value: isSecondChecked, onChanged: (value) {
+                      setState(() {
+                        isSecondChecked = value!;
+                      });
+                    }),
                     Text(
                       'الاستماع من الصفحة الحالية',
                       style:
