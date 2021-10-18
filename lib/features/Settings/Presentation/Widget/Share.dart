@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tafsir_project/features/Settings/Presentation/Widget/ShareButton.dart';
 
 class Share extends StatelessWidget {
   @override
@@ -7,8 +8,8 @@ class Share extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Dialog(
         child: Container(
-          height: 400,
-          width: 200,
+          height: 495,
+          width: 290,
           child: Column(
             children: [
               Container(
@@ -40,7 +41,7 @@ class Share extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                 child: Text(
-                  'اذا اعجبك تطبيق التفاسير العظيمة نرجو ان تساهم في دعم هذا الوقف',
+                  'اذا اعجبك تطبيق التفاسير العظيمة, فنرجو أن تساهم في دعم هذا الوقف الخيري من خلال نشره عبر مواقع التواصل الاجتماعي, أنشر ولك الأجر ان شاء اللّه',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -48,17 +49,39 @@ class Share extends StatelessWidget {
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: Container(width: double.infinity,
-                    child: ElevatedButton.icon(
-                        onPressed: () {},
-                        icon: Image.asset(
-                          'images/logo_facebook.png',
-                          width: 30,
-                          height: 30,
-                        ),
-                        label: Text('انشر على Facebook')),
-                  )),
+                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                child: Container(
+                  child: Column(
+                    children: [
+                      ShareButton(
+                          onTap: () {},
+                          buttonColor: Color.fromARGB(245, 0, 0, 135),
+                          buttonText: 'انشر على Facebook',
+                          buttonImagePath: 'images/logo_facebook.png'),
+                      ShareButton(
+                          onTap: () {},
+                          buttonColor: Colors.blueAccent,
+                          buttonText: 'انشر على Twitter',
+                          buttonImagePath: 'images/logo_twitter.png'),
+                      ShareButton(
+                          onTap: () {},
+                          buttonColor: Color.fromARGB(240, 0, 0,255),
+                          buttonText: 'انشر على LinkedIn',
+                          buttonImagePath: 'images/logo_linkedin.png'),
+                      ShareButton(
+                          onTap: () {},
+                          buttonColor: Colors.red,
+                          buttonText: 'انشر على Google',
+                          buttonImagePath: 'images/logo_google.png'),
+                      ShareButton(
+                          onTap: () {},
+                          buttonColor: Colors.green,
+                          buttonText: 'انشر على WhatsApp',
+                          buttonImagePath: 'images/logo_whatsapp.png'),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

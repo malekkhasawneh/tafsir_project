@@ -74,6 +74,10 @@ flutter:
     - images/removeBookmark_icon.png
     - images/delete.png
     - images/logo_facebook.png
+    - images/logo_twitter.png
+    - images/logo_whatsapp.png
+    - images/logo_linkedin.png
+    - images/logo_google.png
     - images/check_icon_enable.png
     - images/Add-List-en.png
 
