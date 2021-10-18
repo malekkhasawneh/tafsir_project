@@ -89,15 +89,15 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: EdgeInsets.only(top: 80),
                   child: Container(
-                    height: widthSize > 520 ? 530 : heightSize * 0.82,
+                    height: widthSize > 520 ? 610 : heightSize * 0.82,
                     width: double.infinity,
                     color: Colors.white,
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 75),
+                  padding: EdgeInsets.only(top:  widthSize > 520 ? 60:75),
                   child: Container(
-                    height: widthSize > 520 ? 540 : heightSize * 0.838,
+                    height: widthSize > 520 ? 610: heightSize * 0.838,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         image: DecorationImage(
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                         top: heightSize * 0.163,
                         left: widthSize > 520 ? 40 : widthSize * 0.08),
                     child: Container(
-                        height: widthSize > 520 ? 479 : heightSize * 0.73,
+                        height: widthSize > 520 ? 525 : heightSize * 0.73,
                         width: widthSize > 520 ? 418 : widthSize * 0.84,
                         child: Directionality(
                             textDirection: TextDirection.rtl,

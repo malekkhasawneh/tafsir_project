@@ -93,16 +93,20 @@ class _SearchDialogState extends State<SearchDialog> {
                                             children: [
                                               Expanded(child: Container()),
                                               TabBar(
+                                                labelStyle: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                                unselectedLabelStyle: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
                                                 labelColor: Colors.black,
                                                 unselectedLabelColor:
                                                     Colors.grey,
                                                 tabs: [
                                                   Tab(
-                                                    key: ObjectKey(1),
                                                     text: 'نتائج مطابقة',
                                                   ),
                                                   Tab(
-                                                    key: ObjectKey(1),
                                                     text: 'نتائج كلية',
                                                   ),
                                                 ],
