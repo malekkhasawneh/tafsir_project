@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                         top: widthSize > 520 ? 116 : heightSize * 0.163,
                         left: widthSize > 520 ? 40 : widthSize * 0.08),
                     child: Container(
-                        height: widthSize > 520 ? 590 : heightSize * 0.73,
+                        height: widthSize > 520 ? 590 : heightSize * 0.735,
                         width: widthSize > 520 ? 416 : widthSize * 0.84,
                         child: Directionality(
                             textDirection: TextDirection.rtl,
