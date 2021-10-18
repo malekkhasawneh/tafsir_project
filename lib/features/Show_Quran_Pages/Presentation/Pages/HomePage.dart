@@ -89,15 +89,15 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: EdgeInsets.only(top: 80),
                   child: Container(
-                    height: widthSize > 520 ? 610 : heightSize * 0.82,
+                    height: widthSize > 520 ? 670 : heightSize * 0.82,
                     width: double.infinity,
                     color: Colors.white,
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top:  widthSize > 520 ? 60:75),
+                  padding: EdgeInsets.only(top: widthSize > 520 ? 75 : 75),
                   child: Container(
-                    height: widthSize > 520 ? 610: heightSize * 0.838,
+                    height: widthSize > 520 ? 670 : heightSize * 0.838,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         image: DecorationImage(
@@ -108,11 +108,11 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: heightSize * 0.163,
+                        top: widthSize > 520 ? 116 : heightSize * 0.163,
                         left: widthSize > 520 ? 40 : widthSize * 0.08),
                     child: Container(
-                        height: widthSize > 520 ? 525 : heightSize * 0.73,
-                        width: widthSize > 520 ? 418 : widthSize * 0.84,
+                        height: widthSize > 520 ? 590 : heightSize * 0.73,
+                        width: widthSize > 520 ? 416 : widthSize * 0.84,
                         child: Directionality(
                             textDirection: TextDirection.rtl,
                             child: CustomPageView(
@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                               },
                             )))),
                 Padding(
-                  padding: EdgeInsets.only(top: 58),
+                  padding: EdgeInsets.only(top: widthSize > 520 ? 63 : 58),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: widthSize > 520 ? 570 : heightSize * 0.85),
+                      top: widthSize > 520 ? 660 : heightSize * 0.85),
                   child: Center(
                       child: Text(
                     '${pageNumber + 1}',
