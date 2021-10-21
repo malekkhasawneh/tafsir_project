@@ -22,6 +22,7 @@ class _SearchDialogState extends State<SearchDialog> {
         child: Dialog(
           child: Container(
             height: 350,
+            width: 200,
             child: Column(
               children: [
                 Container(
@@ -37,25 +38,28 @@ class _SearchDialogState extends State<SearchDialog> {
                   padding: EdgeInsets.only(top: 1, bottom: 1),
                   child: SearchTextField(),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: buttonNames
-                      .map(
-                        (button) => CustomTextButton(
-                          buttonText: button,
-                          buttonColor:
-                              selectedButton == button ? Colors.red : null,
-                          onTap: () {
-                            setState(() {
-                              selectedButton = button;
-                              button == 'ايات القران'
-                                  ? isPressed = true
-                                  : isPressed = false;
-                            });
-                          },
-                        ),
-                      )
-                      .toList(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 3),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: buttonNames
+                        .map(
+                          (button) => CustomTextButton(
+                            buttonText: button,
+                            buttonColor:
+                                selectedButton == button ? Colors.red : null,
+                            onTap: () {
+                              setState(() {
+                                selectedButton = button;
+                                button == 'ايات القران'
+                                    ? isPressed = true
+                                    : isPressed = false;
+                              });
+                            },
+                          ),
+                        )
+                        .toList(),
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 2),

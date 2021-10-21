@@ -11,9 +11,7 @@ class CustomTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      fit: FlexFit.loose,
-      child: InkWell(
+    return InkWell(
         onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
@@ -21,22 +19,24 @@ class CustomTextButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
           ),
           height: 35,
-          child: Row(
-            children: [
-              Image.asset(
-                'images/red-circle.png',
-                width: 15,
-                height: 15,
-              ),
-              Text(
-                buttonText,
-                style: TextStyle(fontSize: 10, color: buttonColor),
-                textAlign: TextAlign.center,
-              )
-            ],
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 3),
+            child: Row(
+              children: [
+                Image.asset(
+                  'images/red-circle.png',
+                  width: 15,
+                  height: 15,
+                ),
+                Text(
+                  buttonText,
+                  style: TextStyle(fontSize: 10, color: buttonColor),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
           ),
         ),
-      ),
     );
   }
 }
