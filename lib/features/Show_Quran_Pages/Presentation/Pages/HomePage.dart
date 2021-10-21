@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: widthSize > 520 ? 660 : heightSize * 0.85),
+                      top: widthSize > 520 ? 660 : heightSize * 0.857),
                   child: Center(
                       child: Text(
                     '${pageNumber + 1}',
